@@ -7,13 +7,12 @@ PanelWindow {
   anchors { top: true; left: true; right: true }
   height: 32
   exclusiveZone: 0
-  color: "transparent"
+  color: "#00000000"
 
   Rectangle {
     anchors { fill: parent; topMargin: 4; leftMargin: 8; rightMargin: 8; bottomMargin: 0 }
-    color: Theme.bgAlt
+    color: Qt.rgba(0.094, 0.094, 0.145, 0.92)
     radius: Theme.radius
-    opacity: 0.92
 
     Row {
       anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: Theme.padding }
