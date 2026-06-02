@@ -1,27 +1,15 @@
 import QtQuick
 import Quickshell
+import Quickshell.Services.UPower
 import "Theme.qml" as Theme
 
 Item {
   id: root
-  implicitWidth: batText.width + batPct.width + 10
+  implicitWidth: 50
   implicitHeight: Theme.barHeight
 
-  property int percent: 0
-  property bool charging: false
-
-  Timer {
-    interval: 5000
-    running: true
-    repeat: true
-    onTriggered: {
-      Quickshell.Process.exec("/bin/sh", ["-c", "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo 0"])
-        .then(out => { root.percent = parseInt(out.stdout.trim()) })
-      Quickshell.Process.exec("/bin/sh", ["-c", "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo Unknown"])
-        .then(out => { root.charging = out.stdout.trim() === "Charging" })
-    }
-    Component.onCompleted: onTriggered()
-  }
+  property int percent: UPower.displayDevice ? Math.round(UPower.displayDevice.percentage) : 0
+  property bool charging: UPower.displayDevice ? UPower.displayDevice.state === UPowerDeviceState.Charging : false
 
   Text {
     id: batText

@@ -28,6 +28,6 @@ ShellRoot {
   }
 
   Component.onCompleted: {
-    Hyprland.ready.then(() => print("Hyprland connected"))
+    if (Hyprland.ready) print("Hyprland connected")
   }
 }

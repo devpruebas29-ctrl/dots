@@ -3,7 +3,7 @@ import Quickshell
 import "Theme.qml" as Theme
 
 Item {
-  implicitWidth: clockIcon.width + clockText.width + 10
+  implicitWidth: 60
   implicitHeight: Theme.barHeight
 
   property string timeString: ""
