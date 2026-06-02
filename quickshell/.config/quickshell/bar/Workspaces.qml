@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
-import "Theme.qml" as Theme
+import "Theme.js" as Theme
 
 Item {
   implicitWidth: 132

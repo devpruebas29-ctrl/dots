@@ -1,6 +1,6 @@
 import QtQuick
 import Quickshell
-import "Theme.qml" as Theme
+import "Theme.js" as Theme
 
 Item {
   implicitWidth: 24

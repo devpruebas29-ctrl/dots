@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import "Theme.qml" as Theme
+import "Theme.js" as Theme
 
 PanelWindow {
   id: root

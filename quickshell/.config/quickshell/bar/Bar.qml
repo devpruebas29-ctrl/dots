@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import "Theme.qml" as Theme
+import "Theme.js" as Theme
 
 PanelWindow {
   anchors { top: true; left: true; right: true }
@@ -11,7 +11,7 @@ PanelWindow {
 
   Rectangle {
     anchors { fill: parent; topMargin: 4; leftMargin: 8; rightMargin: 8; bottomMargin: 0 }
-    color: Qt.rgba(0.094, 0.094, 0.145, 0.92)
+    color: Theme.bgAlt
     radius: Theme.radius
 
     Row {
