@@ -1,0 +1,110 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "monospace";
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#window {
+  margin: 0;
+  padding: 0;
+}
+
+#workspaces {
+  background: #181825;
+  border-radius: 12px;
+  padding: 4px 6px;
+  margin: 0;
+}
+
+#workspaces button {
+  background: #1e1e2e;
+  color: #585b70;
+  border-radius: 8px;
+  padding: 0 10px;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0 2px;
+  font-weight: normal;
+}
+
+#workspaces button.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
+#workspaces button.visible {
+  background: #313244;
+  color: #cdd6f4;
+}
+
+#workspaces button.empty {
+  background: #1e1e2e;
+  color: #585b70;
+}
+
+#workspaces button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: #45475a;
+  color: #cdd6f4;
+}
+
+#custom-audio,
+#network,
+#battery,
+#clock,
+#tray {
+  background: #181825;
+  border-radius: 12px;
+  padding: 0 12px;
+  margin: 0 2px;
+  color: #cdd6f4;
+  min-height: 28px;
+}
+
+#custom-audio {
+  color: #a6e3a1;
+}
+
+#network {
+  color: #89b4fa;
+}
+
+#battery {
+  color: #f9e2af;
+}
+
+#battery.warning {
+  color: #fab387;
+}
+
+#battery.critical {
+  color: #f38ba8;
+}
+
+#clock {
+  color: #cdd6f4;
+  font-weight: bold;
+}
+
+#tray {
+  padding: 0 8px;
+}
+
+#tray menu {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border: 1px solid #313244;
+  border-radius: 8px;
+}
+
+#tray .menuitem:hover {
+  background: #313244;
+}
