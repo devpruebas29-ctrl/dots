@@ -2,19 +2,19 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 import ".." as Root
-import ".." as Root
 
 PanelWindow {
   anchors { top: true; left: true; right: true }
   height: Root.Theme.barHeight
-  color: Root.Theme.bg
+  color: "transparent"
   z: 10
+  margins { top: 6; left: 8; right: 8 }
 
   Rectangle {
     anchors.fill: parent
     color: Root.Theme.bgAlt
-    radius: 0
-    opacity: 0.95
+    radius: Root.Theme.radius
+    opacity: 0.92
   }
 
   Row {
@@ -32,6 +32,7 @@ PanelWindow {
 
     Volume {}
     Network {}
+    Battery {}
     SystemTray {}
     Clock {}
   }

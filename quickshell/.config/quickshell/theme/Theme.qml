@@ -18,12 +18,12 @@ QtObject {
   readonly property color teal: "#94e2d5"
   readonly property color orange: "#fab387"
 
-  readonly property int barHeight: 36
-  readonly property int fontSize: 13
-  readonly property int fontSizeSmall: 11
-  readonly property int fontSizeLarge: 16
-  readonly property int radius: 8
-  readonly property int spacing: 8
-  readonly property int padding: 8
-  readonly property string fontFamily: "monospace"
+  readonly property int barHeight: 28
+  readonly property int fontSize: 12
+  readonly property int fontSizeSmall: 10
+  readonly property int fontSizeLarge: 14
+  readonly property int radius: 6
+  readonly property int spacing: 4
+  readonly property int padding: 6
+  readonly property string fontFamily: "JetBrainsMono Nerd Font"
 }

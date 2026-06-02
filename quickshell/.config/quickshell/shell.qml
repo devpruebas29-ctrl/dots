@@ -12,7 +12,6 @@ import "dashboard" as DashboardDir
 ShellRoot {
   Bar.Bar {}
 
-  Widgets.BatteryWidget {}
   Widgets.MediaPlayerWidget {}
 
   Notifications.NotificationPopup {}

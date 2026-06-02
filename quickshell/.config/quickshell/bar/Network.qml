@@ -2,13 +2,14 @@ import QtQuick
 import Quickshell
 
 Item {
-  implicitWidth: 24
+  implicitWidth: 22
   implicitHeight: Root.Theme.barHeight
 
   Text {
     anchors.centerIn: parent
-    text: "\uD83C\uDF10"
+    text: "\uF1EB"
     font.pixelSize: Root.Theme.fontSize
-    color: Root.Theme.fg
+    font.family: Root.Theme.fontFamily
+    color: Root.Theme.blue
   }
 }

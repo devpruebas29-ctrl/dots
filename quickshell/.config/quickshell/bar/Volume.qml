@@ -2,30 +2,27 @@ import QtQuick
 import Quickshell
 
 Item {
-  implicitWidth: volText.width + 8
+  implicitWidth: volText.width + volPct.width + 10
   implicitHeight: Root.Theme.barHeight
 
   property int volumePercent: 50
 
   Text {
     id: volText
-    anchors.centerIn: parent
+    anchors { left: parent.left; verticalCenter: parent.verticalCenter }
     text: {
-      if (parent.volumePercent <= 0) return "\uD83D\uDD07"
-      if (parent.volumePercent < 33) return "\uD83D\uDD08"
-      if (parent.volumePercent < 66) return "\uD83D\uDD09"
-      return "\uD83D\uDD0A"
+      if (parent.volumePercent <= 0) return "\uF026"
+      if (parent.volumePercent < 33) return "\uF027"
+      return "\uF028"
     }
     font.pixelSize: Root.Theme.fontSize
-    color: Root.Theme.fg
+    font.family: Root.Theme.fontFamily
+    color: Root.Theme.green
   }
 
   Text {
-    anchors {
-      left: volText.right
-      leftMargin: 4
-      verticalCenter: parent.verticalCenter
-    }
+    id: volPct
+    anchors { left: volText.right; leftMargin: 3; verticalCenter: parent.verticalCenter }
     text: parent.volumePercent + "%"
     color: Root.Theme.fgAlt
     font.pixelSize: Root.Theme.fontSizeSmall

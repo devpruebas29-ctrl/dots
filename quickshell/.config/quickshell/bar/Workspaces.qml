@@ -11,33 +11,31 @@ Item {
   Row {
     id: workspaceRow
     anchors.centerIn: parent
-    spacing: 4
+    spacing: 3
 
     Repeater {
       model: 5
 
       Rectangle {
-        width: 28
-        height: 28
+        width: 24
+        height: 22
         radius: Root.Theme.radius
         color: {
           if (index + 1 === Hyprland.focusedWorkspace.id) return Root.Theme.accent
           if (workspaces.has(index + 1)) return Root.Theme.surface
-          return Root.Theme.bgAlt
+          return Root.Theme.bg
         }
         opacity: {
           if (index + 1 === Hyprland.focusedWorkspace.id) return 1.0
           if (workspaces.has(index + 1)) return 0.8
           return 0.5
         }
-        border.width: index + 1 === Hyprland.focusedWorkspace.id ? 0 : 1
-        border.color: Root.Theme.surfaceAlt
 
         Text {
           anchors.centerIn: parent
           text: index + 1
           color: index + 1 === Hyprland.focusedWorkspace.id ? Root.Theme.bg : Root.Theme.fg
-          font.pixelSize: Root.Theme.fontSizeSmall
+          font.pixelSize: Root.Theme.fontSize
           font.bold: index + 1 === Hyprland.focusedWorkspace.id
         }
 
