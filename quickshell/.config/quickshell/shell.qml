@@ -12,7 +12,7 @@ import "dashboard" as DashboardDir
 ShellRoot {
   Bar.Bar {}
 
-  Widgets.MediaPlayerWidget {}
+  Widgets.MediaPlayer {}
 
   Notifications.NotificationPopup {}
 

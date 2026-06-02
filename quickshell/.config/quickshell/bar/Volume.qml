@@ -1,11 +1,24 @@
 import QtQuick
 import Quickshell
+import "Theme.qml" as Theme
 
 Item {
+  id: root
   implicitWidth: volText.width + volPct.width + 10
-  implicitHeight: Root.Theme.barHeight
+  implicitHeight: Theme.barHeight
 
-  property int volumePercent: 50
+  property int volumePercent: 0
+
+  Timer {
+    interval: 2000
+    running: true
+    repeat: true
+    onTriggered: {
+      Quickshell.Process.exec("/bin/sh", ["-c", "pamixer --get-volume 2>/dev/null || echo 0"])
+        .then(out => { root.volumePercent = parseInt(out.stdout.trim()) })
+    }
+    Component.onCompleted: onTriggered()
+  }
 
   Text {
     id: volText
@@ -15,22 +28,25 @@ Item {
       if (parent.volumePercent < 33) return "\uF027"
       return "\uF028"
     }
-    font.pixelSize: Root.Theme.fontSize
-    font.family: Root.Theme.fontFamily
-    color: Root.Theme.green
+    font.pixelSize: Theme.fontSize
+    font.family: Theme.fontFamily
+    color: Theme.green
   }
 
   Text {
     id: volPct
     anchors { left: volText.right; leftMargin: 3; verticalCenter: parent.verticalCenter }
     text: parent.volumePercent + "%"
-    color: Root.Theme.fgAlt
-    font.pixelSize: Root.Theme.fontSizeSmall
-    font.family: Root.Theme.fontFamily
+    color: Theme.fgAlt
+    font.pixelSize: Theme.fontSizeSmall
+    font.family: Theme.fontFamily
   }
 
   MouseArea {
     anchors.fill: parent
-    onClicked: parent.volumePercent = parent.volumePercent >= 100 ? 0 : parent.volumePercent + 10
+    onClicked: {
+      Quickshell.Process.exec("/bin/sh", ["-c",
+        root.volumePercent > 0 ? "pamixer -t" : "pamixer -u"])
+    }
   }
 }

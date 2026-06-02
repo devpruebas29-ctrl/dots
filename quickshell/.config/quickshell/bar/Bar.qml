@@ -1,33 +1,31 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import ".." as Root
+import "Theme.qml" as Theme
 
 PanelWindow {
   anchors { top: true; left: true; right: true }
-  height: Root.Theme.barHeight
+  height: Theme.barHeight
   color: "transparent"
-  z: 10
-  margins { top: 6; left: 8; right: 8 }
 
   Rectangle {
-    anchors.fill: parent
-    color: Root.Theme.bgAlt
-    radius: Root.Theme.radius
+    anchors { fill: parent; topMargin: 4; leftMargin: 6; rightMargin: 6; bottomMargin: 0 }
+    color: Theme.bgAlt
+    radius: Theme.radius
     opacity: 0.92
   }
 
   Row {
-    anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: Root.Theme.padding }
-    spacing: Root.Theme.spacing
+    anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: Theme.padding }
+    spacing: Theme.spacing
     height: parent.height
 
     Workspaces {}
   }
 
   Row {
-    anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: Root.Theme.padding }
-    spacing: Root.Theme.spacing
+    anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: Theme.padding }
+    spacing: Theme.spacing
     height: parent.height
 
     Volume {}

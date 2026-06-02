@@ -1,17 +1,14 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
+import "Theme.qml" as Theme
 
 PanelWindow {
   id: root
   visible: false
   anchors { bottom: true; left: true; right: true }
   height: 60
-  color: Root.Theme.bgAlt
-  opacity: 0.9
-  z: 20
-
-  property bool visible: false
+  color: "#E6181825"
 
   Row {
     anchors.centerIn: parent
@@ -23,8 +20,8 @@ PanelWindow {
       Rectangle {
         width: 40
         height: 40
-        radius: Root.Theme.radius
-        color: Root.Theme.surface
+        radius: Theme.radius
+        color: Theme.surface
 
         Text {
           anchors.centerIn: parent

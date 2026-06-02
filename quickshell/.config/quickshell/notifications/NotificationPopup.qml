@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import "Theme.qml" as Theme
 
 Item {
   id: root
@@ -7,12 +8,12 @@ Item {
   Rectangle {
     id: popup
     visible: false
-    x: parent.width - width - Root.Theme.padding
-    y: Root.Theme.barHeight + Root.Theme.spacing
+    x: parent.width - width - Theme.padding
+    y: Theme.barHeight + Theme.spacing
     width: 320
     height: 80
-    color: Root.Theme.bgAlt
-    radius: Root.Theme.radius
+    color: Theme.bgAlt
+    radius: Theme.radius
     opacity: 0.95
 
     property string message: ""
@@ -20,14 +21,14 @@ Item {
     Text {
       anchors {
         centerIn: parent
-        margins: Root.Theme.padding
+        margins: Theme.padding
       }
       text: popup.message
-      color: Root.Theme.fg
-      font.pixelSize: Root.Theme.fontSize
-      font.family: Root.Theme.fontFamily
+      color: Theme.fg
+      font.pixelSize: Theme.fontSize
+      font.family: Theme.fontFamily
       wrapMode: Text.WordWrap
-      width: parent.width - 2 * Root.Theme.padding
+      width: parent.width - 2 * Theme.padding
     }
   }
 

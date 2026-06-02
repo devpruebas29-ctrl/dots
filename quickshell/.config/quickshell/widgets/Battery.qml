@@ -1,12 +1,13 @@
 import QtQuick
 import Quickshell
+import "Theme.qml" as Theme
 
 Rectangle {
   visible: false
   width: 200
   height: 40
-  color: Root.Theme.bgAlt
-  radius: Root.Theme.radius
+  color: Theme.bgAlt
+  radius: Theme.radius
   opacity: 0.9
 
   property int percent: 75
@@ -15,8 +16,8 @@ Rectangle {
   Text {
     anchors.centerIn: parent
     text: (charging ? "\u26A1 " : "") + percent + "%"
-    color: Root.Theme.fg
-    font.pixelSize: Root.Theme.fontSize
-    font.family: Root.Theme.fontFamily
+    color: Theme.fg
+    font.pixelSize: Theme.fontSize
+    font.family: Theme.fontFamily
   }
 }

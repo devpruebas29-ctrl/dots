@@ -1,15 +1,13 @@
 import QtQuick
 import Quickshell
+import "Theme.qml" as Theme
 
 Rectangle {
   id: root
   visible: false
   anchors.fill: parent
-  color: Root.Theme.bg
+  color: Theme.bg
   opacity: 0.95
-  z: 50
-
-  property bool visible: false
 
   Column {
     anchors.centerIn: parent
@@ -18,25 +16,25 @@ Rectangle {
     Text {
       anchors.horizontalCenter: parent.horizontalCenter
       text: "Dashboard"
-      color: Root.Theme.fg
-      font.pixelSize: Root.Theme.fontSizeLarge
-      font.family: Root.Theme.fontFamily
+      color: Theme.fg
+      font.pixelSize: Theme.fontSizeLarge
+      font.family: Theme.fontFamily
       font.bold: true
     }
 
     Rectangle {
       width: 300
       height: 2
-      color: Root.Theme.accent
+      color: Theme.accent
       anchors.horizontalCenter: parent.horizontalCenter
     }
 
     Text {
       anchors.horizontalCenter: parent.horizontalCenter
       text: "Controles rapidos aqui"
-      color: Root.Theme.fgAlt
-      font.pixelSize: Root.Theme.fontSize
-      font.family: Root.Theme.fontFamily
+      color: Theme.fgAlt
+      font.pixelSize: Theme.fontSize
+      font.family: Theme.fontFamily
     }
   }
 

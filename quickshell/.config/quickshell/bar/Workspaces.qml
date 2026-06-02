@@ -1,10 +1,11 @@
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
+import "Theme.qml" as Theme
 
 Item {
   implicitWidth: workspaceRow.width
-  implicitHeight: Root.Theme.barHeight
+  implicitHeight: Theme.barHeight
 
   property var workspaces: Hyprland.workspaces
 
@@ -19,11 +20,11 @@ Item {
       Rectangle {
         width: 24
         height: 22
-        radius: Root.Theme.radius
+        radius: Theme.radius
         color: {
-          if (index + 1 === Hyprland.focusedWorkspace.id) return Root.Theme.accent
-          if (workspaces.has(index + 1)) return Root.Theme.surface
-          return Root.Theme.bg
+          if (index + 1 === Hyprland.focusedWorkspace.id) return Theme.accent
+          if (workspaces.has(index + 1)) return Theme.surface
+          return Theme.bg
         }
         opacity: {
           if (index + 1 === Hyprland.focusedWorkspace.id) return 1.0
@@ -34,8 +35,8 @@ Item {
         Text {
           anchors.centerIn: parent
           text: index + 1
-          color: index + 1 === Hyprland.focusedWorkspace.id ? Root.Theme.bg : Root.Theme.fg
-          font.pixelSize: Root.Theme.fontSize
+          color: index + 1 === Hyprland.focusedWorkspace.id ? Theme.bg : Theme.fg
+          font.pixelSize: Theme.fontSize
           font.bold: index + 1 === Hyprland.focusedWorkspace.id
         }
 

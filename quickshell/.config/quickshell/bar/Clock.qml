@@ -1,9 +1,10 @@
 import QtQuick
 import Quickshell
+import "Theme.qml" as Theme
 
 Item {
-  implicitWidth: clockText.width + 8
-  implicitHeight: Root.Theme.barHeight
+  implicitWidth: clockIcon.width + clockText.width + 10
+  implicitHeight: Theme.barHeight
 
   property string timeString: ""
 
@@ -17,12 +18,21 @@ Item {
     }
   }
 
+Text {
+    id: clockIcon
+    anchors { left: parent.left; verticalCenter: parent.verticalCenter }
+    text: "\uF017"
+    font.pixelSize: Theme.fontSize
+    font.family: Theme.fontFamily
+    color: Theme.magenta
+  }
+
   Text {
     id: clockText
-    anchors.centerIn: parent
+    anchors { left: clockIcon.right; leftMargin: 4; verticalCenter: parent.verticalCenter }
     text: parent.timeString
-    color: Root.Theme.fg
-    font.pixelSize: Root.Theme.fontSize
-    font.family: Root.Theme.fontFamily
+    color: Theme.fg
+    font.pixelSize: Theme.fontSize
+    font.family: Theme.fontFamily
   }
 }
