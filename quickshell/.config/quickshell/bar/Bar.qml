@@ -6,7 +6,8 @@ import "Theme.js" as Theme
 PanelWindow {
   anchors { top: true; left: true; right: true }
   height: 32
-  exclusiveZone: 0
+  aboveWindows: false
+  exclusiveZone: height
   color: "#00000000"
 
   Rectangle {
