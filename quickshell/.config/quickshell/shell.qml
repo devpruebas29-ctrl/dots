@@ -8,6 +8,7 @@ import "notifications" as Notifications
 import "dock" as Dock
 import "lockscreen" as LockscreenDir
 import "dashboard" as DashboardDir
+import "launcher" as LauncherDir
 
 ShellRoot {
   Bar.Bar {}
@@ -24,6 +25,11 @@ ShellRoot {
 
   DashboardDir.Dashboard {
     id: dashboard
+    visible: false
+  }
+
+  LauncherDir.Launcher {
+    id: launcher
     visible: false
   }
 
